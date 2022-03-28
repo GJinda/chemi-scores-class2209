@@ -1,0 +1,26 @@
+/* table container */
+.table-container {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.table-container>#table1 {
+  height: 50%;
+  width: 50%;
+}
+
+.table-container>#table2 {
+  height: 50%;
+  width: 50%;
+}
+
+.table-container>#table3 {
+  height: 50%;
+  width: 50%;
+}
+
+.table-container>#table4 {
+  height: 50%;
+  width: 50%;
+}
