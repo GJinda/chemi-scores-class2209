@@ -124,6 +124,19 @@ const setSeries = (series, seriesNum, seriesType) => {
   }
 }
 
+const setTooltip = () => {
+  let tip = {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  }
+  return tip
+}
+
 const setData = (sheet) => {
   let keys = Object.keys(sheet)
   console.log("keys", keys, "last key", keys[keys.length - 2])
@@ -131,9 +144,9 @@ const setData = (sheet) => {
   console.log("categoryNum", categoryNum)
 
   let source1 = []
-  setSource(sheet, source1, categoryNum + 1, 1, 11)
+  setSource(sheet, source1, categoryNum + 1, 1, 12)
   let source2 = []
-  setSource(sheet, source2, categoryNum + 1, 11, 23)
+  setSource(sheet, source2, categoryNum + 1, 12, 23)
   let source3 = []
   setSource(sheet, source3, categoryNum + 1, 23, 34)
   let source4 = []
@@ -165,6 +178,24 @@ const setData = (sheet) => {
   option3.series = series3;
   console.log("series4", series4)
   option4.series = series4;
+
+  let tooltip1 = {}
+  tooltip1 = setTooltip()
+  let tooltip2 = {}
+  tooltip2 = setTooltip()
+  let tooltip3 = {}
+  tooltip3 = setTooltip()
+  let tooltip4 = {}
+  tooltip4 = setTooltip()
+
+  console.log("tooltip1", tooltip1)
+  option1.tooltip = tooltip1;
+  console.log("tooltip2", tooltip2)
+  option2.tooltip = tooltip2;
+  console.log("tooltip3", tooltip3)
+  option3.tooltip = tooltip3;
+  console.log("tooltip4", tooltip4)
+  option4.tooltip = tooltip4;
 
   if (option1 && typeof option1 === 'object') {
     lineChart1.setOption(option1, true);
